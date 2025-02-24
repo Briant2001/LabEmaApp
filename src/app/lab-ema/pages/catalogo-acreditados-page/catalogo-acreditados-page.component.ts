@@ -2,7 +2,8 @@ import { Component, ElementRef, Input, OnInit, Type, ViewChild } from '@angular/
 import { LaboratoriosCalibracionPageComponent } from '../laboratorios-calibracion-page/laboratorios-calibracion-page.component';
 import { LabEmaService } from '../../services/lab-ema.service';
 import { BancoSangre, Busqueda, Catalogo, Ema, GRadiologiaImagen, LabAnalisisClinicos, LaboratorioCalibracion, LaboratorioEnsayo, OrganismoCertificacion, ProductosMRC, ProvEnsayosApitud, UnidadInspeccion } from '../../interfaces/lab-ema.interface';
-import { environments } from '../../../../environments/environments.prod';
+import { environments } from '../../../../.env/env.prod';
+
 import { concatMap, EMPTY, filter, from, map, pipe, take } from 'rxjs';
 
 @Component({

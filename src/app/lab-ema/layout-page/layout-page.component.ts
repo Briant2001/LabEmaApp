@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { LabEmaService } from '../services/lab-ema.service';
 import { BancoSangre, Catalogo, Ema, GRadiologiaImagen, LabAnalisisClinicos, LaboratorioCalibracion, LaboratorioEnsayo, OrganismoCertificacion, ProductosMRC, ProvEnsayosApitud, UnidadInspeccion } from '../interfaces/lab-ema.interface';
-import { environments } from '../../../environments/environments.prod';
+import { environments } from '../../../.env/env.prod';
 import { concatMap, EMPTY, filter, from, map, of, take, takeWhile, tap } from 'rxjs';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 

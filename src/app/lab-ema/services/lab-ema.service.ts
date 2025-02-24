@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { environments } from '../../../environments/environments.prod';
+import { environments } from '../../../.env/env.prod';
 import { concatMap, from, map, mergeMap, Observable, of, takeWhile, tap } from 'rxjs';
 import { Ema, LaboratorioCalibracion, LaboratorioEnsayo } from '../interfaces/lab-ema.interface';
 
