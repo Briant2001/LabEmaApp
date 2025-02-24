@@ -1,0 +1,62 @@
+<ema-descripcion-lab
+   title="LISTADO DE ORGANISMOS DE CERTIFICACION ACREDITADOS "
+   p1="En esta sección podrá realizar la búsqueda de los Organismos de Certificación acreditados bajo los siguientes criterios"
+   p2="Las acreditaciones otorgadas por EMA cuentan con reconocimiento a nivel nacional e internacional.Usted podrá realizar su búsqueda por nombre de la organización, ubicación o alcance.Consulte directamente con ellos si tienen capacidad de brindarle el servicio que usted requiere en su localidad.   "
+   ></ema-descripcion-lab>
+<ema-input-busqueda [filtros]="filtros" (eventQuery)="search($event)"></ema-input-busqueda>
+<ema-paginacion (limpiar)="limpiarEma()" (eventEma)="paginacion($event)" [Ema]="ema" [total]="ema?.count" [counts]="count"></ema-paginacion>
+<ema-list-laboratorios-page *ngIf="results.length>0" [Organismos]="ema">
+
+  <tr head>
+    <th scope="col" class="px-6 py-3">
+      Acreditación
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Organismo
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Estado
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Alcance
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Norma
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Status
+    </th>
+  </tr>
+
+  <tr body *ngFor="let item of ema?.results" class="bg-white border-b  border-gray-200">
+
+    <td class="px-6 py-4">
+      {{item['acreditacion']}} | {{item['alcance']}}
+    </td>
+
+    <th scope="row" class="px-6 py-4 font-medium text-gray-900  ">
+      {{item.acreditacion__cliente__nombre}}
+    </th>
+
+    <td class="px-6 py-4">
+      {{item['domicilio__cp__municipio__estado__nombre']}}
+    </td>
+
+    <td class="px-6 py-4">
+      {{item['alcance__nombre']}}
+    </td>
+
+    <td class="px-6 py-4">
+      {{item['normaAcreditacion']}}
+    </td>
+
+    <td class="px-6 py-4">
+      {{item['acreditacion__status__nombre']}}
+    </td>
+
+  </tr>
+
+</ema-list-laboratorios-page>
+
+<ema-loading-spinner *ngIf="spinner== 0" ></ema-loading-spinner>
+<!-- <app-modal></app-modal> -->

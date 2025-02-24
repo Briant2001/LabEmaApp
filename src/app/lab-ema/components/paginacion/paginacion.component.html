@@ -1,0 +1,15 @@
+<div class="flex flex-col items-center mb-3">
+  <!-- Help text -->
+  <span class="text-sm text-blue-600 ">Página {{numePage}}
+      Mostrando <span class="font-semibold text-gray-900 ">{{counts}}</span> <span class="font-semibold text-gray-900 "></span> de <span class="font-semibold text-gray-900 dark:text-white">{{total}}</span> Elementos
+  </span>
+  <!-- Buttons -->
+  <div class="inline-flex mt-2 xs:mt-0">
+      <button (click)="onPrevious()" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900 ">
+          Anterior
+      </button>
+      <button (click)="onNext()" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 ">
+          Siguiente
+      </button>
+  </div>
+</div>

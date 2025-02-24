@@ -1,0 +1,73 @@
+<ema-descripcion-lab
+   title="LISTADO DE UNIDADES DE INSPECCIÓN"
+   p1="En esta sección podrá realizar la búsqueda de Unidades De Inspección bajo los siguientes criterios   "
+   p2="Las acreditaciones otorgadas por EMA cuentan con reconocimiento a nivel nacional e internacional.Usted podrá realizar su búsqueda por nombre de la organización, ubicación o alcance.Consulte directamente con ellos si tienen capacidad de brindarle el servicio que usted requiere en su localidad.   "
+   ></ema-descripcion-lab>
+   <ema-input-busqueda [filtros]="filtros" (eventQuery)="search($event)"></ema-input-busqueda>
+   <ema-paginacion (limpiar)="limpiarEma()" (eventEma)="paginacion($event)" [Ema]="ema" [total]="ema?.count" [counts]="count"></ema-paginacion>
+
+  <ema-list-laboratorios-page >
+
+    <tr head>
+      <th scope="col" class="px-6 py-3">
+        ID_MIX
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Acreditación
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Organismo
+      </th>
+      <th scope="col" class="px-6 py-3 ">
+        Norma Acreditable
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Materia
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Norma
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Estado
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Status
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Documento
+      </th>
+    </tr>
+
+    <tr body *ngFor="let item of ema?.results" class="bg-white border-b border-gray-200">
+      <td class="px-6 py-4">
+        {{item.id__mix}}
+      </td>
+      <td class="px-6 py-4">
+        {{item.acreditacion}}
+      </td>
+      <th scope="row" class="px-6 py-4 font-medium text-gray-900  ">
+        {{item.nombreLaboratorio}}
+      </th>
+
+      <td class="px-6 py-4 whitespace-nowrap">
+        {{item.normaAcred}}
+      </td>
+      <td class="px-6 py-4">
+        {{item.area}}
+      </td>
+      <td class="px-6 py-4">
+        {{item.norma}}
+      </td>
+      <td class="px-6 py-4">
+        {{item.estado}}
+      </td>
+      <td class="px-6 py-4">
+        {{item.status}}
+      </td>
+      <td class="px-6 py-4">
+        {{item.nomArchivo}}
+      </td>
+    </tr>
+
+  </ema-list-laboratorios-page>
+  <ema-loading-spinner *ngIf="spinner== 0" ></ema-loading-spinner>

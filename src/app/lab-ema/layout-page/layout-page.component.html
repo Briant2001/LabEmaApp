@@ -1,0 +1,140 @@
+<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+  <div class="px-3 py-3 lg:px-5 lg:pl-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center justify-start rtl:justify-end">
+        <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+          type="button"
+          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+          <span class="sr-only">Open sidebar</span>
+          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd"
+              d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+            </path>
+          </svg>
+        </button>
+        <a class="flex ms-2 md:me-24">
+          <img src="assets/CENAM.png" class="h-13 me-3" alt="CENAM LOGO" />
+          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">SAE</span>
+        </a>
+
+      </div>
+
+      <ema-input-busqueda (eventQuery)="search($event)"></ema-input-busqueda>
+
+      <div class="flex items-center">
+        <div class="flex items-center ms-3">
+          <div>
+            <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300"
+              aria-expanded="false" data-dropdown-toggle="dropdown-user">
+              <span class="sr-only">Open user menu</span>
+              <img class="w-13 h-13 rounded-full"
+                src="https://catalogo.consultaema.mx:75/6e0f5804b40678e9f31f4b5470540698.png" alt="EMA LOGO">
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<aside id="logo-sidebar"
+  class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+  aria-label="Sidebar">
+  <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+    <ul class="space-y-2 font-medium">
+      <li>
+        <a #item1 id="OR"
+          [routerLink]="['./busqueda']" routerLinkActive="bg-gray-200"
+          class="flex items-center  p-2 text-gray-900 rounded-lg  hover:bg-gray-100 cursor-pointer">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  fill="rgb(71, 117, 247)" width="25" style="color: rgb(71, 117, 247);">
+                <path  d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z"/></svg>
+                -->
+          <span class="ms-3 text-blue-600">Busqueda Rápida</span>
+        </a>
+      </li>
+
+      <li>
+        <a #item1 id="OR"
+          [routerLink]="['./OC']" routerLinkActive="bg-gray-200"
+          class="flex items-center  p-2 text-gray-900 rounded-lg  hover:bg-gray-100 cursor-pointer">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  fill="rgb(71, 117, 247)" width="25" style="color: rgb(71, 117, 247);">
+                <path  d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z"/></svg>
+                -->
+          <span class="ms-3">Organismos de Certificación(OC)</span>
+        </a>
+      </li>
+      <li>
+        <a #item2 id="UI"
+          [routerLink]="['./UI']" routerLinkActive="bg-gray-200"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <span class=" ms-3 ">Unidades De Inspección(UI)</span>
+        </a>
+      </li>
+      <li>
+        <a #item3 id="LC"
+          [routerLink]="['./LC']" routerLinkActive="bg-gray-200"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <span class="ms-3 ">Laboratorios De Calibración(LC)</span>
+        </a>
+      </li>
+      <li>
+        <a #item4 id="LP"
+          [routerLink]="['./LP']" routerLinkActive="bg-gray-200"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <span class="ms-3 ">Laboratorios De Ensayo(LP)</span>
+        </a>
+      </li>
+      <li>
+        <a #item5 id="SALUD"
+          [routerLink]="['./SALUD']" routerLinkActive="bg-gray-200"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <span class="ms-3 ">Laboratorios De Análisis Clínicos(SALUD)</span>
+        </a>
+      </li>
+      <li>
+        <a #item6 id="PEA"
+        [routerLink]="['./PEA']" routerLinkActive="bg-gray-200"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <span class="ms-3 ">Proveedores de Ensayos de Aptitud(PEA)</span>
+        </a>
+      </li>
+      <li>
+        <a #item7 id="PMR"
+          [routerLink]="['./PMR']" routerLinkActive="bg-gray-200"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <span class="ms-3 ">Productores De Materiales De Referencia Certificados(PMR)</span>
+        </a>
+      </li>
+      <li>
+        <a #item7 id="BS"
+          [routerLink]="['./BS']" routerLinkActive="bg-gray-200"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <span class="ms-3 ">Bancos De Sangre(SALUD)</span>
+        </a>
+      </li>
+      <li>
+        <a #item7 id="RI"
+          [routerLink]="['./RI']" routerLinkActive="bg-gray-200"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <span class="ms-3 ">Laboratorios Clínicos De Radiología E Imagen(SALUD)</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>
+<div class="p-4 relative sm:ml-64 mt-20">
+  <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg ">
+    <router-outlet></router-outlet>
+    <ema-loading-spinner *ngIf="control == 1"></ema-loading-spinner>
+    <p class="p-2 text-slate-700 font-bold text-[15px]" *ngIf="control == 2">No se encontró ninguna coincidencia.</p>
+  </div>
+</div>
