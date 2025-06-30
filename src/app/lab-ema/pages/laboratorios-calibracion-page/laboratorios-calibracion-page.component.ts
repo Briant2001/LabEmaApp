@@ -94,7 +94,7 @@ export class LaboratoriosCalibracionPageComponent {
 
   search(query: string) {
     this.spinner = 0;
-    if (query == "") {
+    if (query == "" || query ==undefined) {
       this.initRequest()
       return
     }

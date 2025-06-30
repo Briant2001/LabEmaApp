@@ -34,7 +34,10 @@ export class CatalogoAcreditadosPageComponent implements OnInit {
 
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+
+  }
 
   search(query: string) {
     from(this._URLs).pipe(

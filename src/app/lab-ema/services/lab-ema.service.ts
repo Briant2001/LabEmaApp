@@ -80,4 +80,26 @@ export class LabEmaService {
     return response && response.results.length>0;
   }
 
+  htmlResponse: string = '';
+
+  validarRFC(){
+    const headers = new HttpHeaders({
+      'responseType': `xml`
+    });
+
+    const formData = new FormData();
+    formData.append('javax.faces.partial.ajax', 'true'); // Añade tus datos
+    formData.append('javax.faces.source', 'formMain:consulta'); // Añade tus datos
+    formData.append('javax.faces.partial.execute', '@all'); // Añade tus datos
+    formData.append('javax.faces.partial.render', 'formMain'); // Añade tus datos
+    formData.append('formMain:consulta', 'formMain:consulta'); // Añade tus datos
+    formData.append('formMain', 'formMain'); // Añade tus datos
+    formData.append('formMain:valRFC', 'RIFA970818NS5'); // Añade tus datos
+    formData.append('javax.faces.ViewState', '4118388473759422277:-6055248495221823745'); // Añade tus datos
+
+    return this.httpClient.post<FormData>("https://agsc.siat.sat.gob.mx/PTSC/ValidaRFC/index.jsf",formData,{
+      responseType:"text" as "json"
+    })
+  }
+
 }
